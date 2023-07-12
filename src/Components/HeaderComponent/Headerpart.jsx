@@ -42,16 +42,21 @@ const Headerpart = () => {
 
   return (
   <>
-    <Box style={{minHeight:'38vh' ,backgroundColor:'#8d6e63',display:'flex',alignItems:'center',justifyContent:'space-around'}}>
+    <Box sx={{height:{lg:'80vh',md:'65vh',sm:'36vh',xs:'30vh'},position:'relative' ,backgroundColor:'#8d6e63',display:'flex',alignItems:'center',justifyContent:'space-around'}}>
 
-        <Box style={{width:'50vw'}}>
-            <Typography variant='h4' >Explore, Discover, and Shop Your Way to Unparalleled Delight at Our <span style={{fontWeight:'bold'}}>MyBazzar</span></Typography>
+        <Box sx={{maxWidth:{lg:'50vw',md:'45vw',sm:'40vw',xs:'30vw'},position:'absolute',top:'50%',right:'50%',transformX:'translate(-40%)'}}>
+            <Typography sx={{
+              
+              fontSize:{lg:'40px',md:'30px',sm:'20px',xs:'10px'}
+              
+              
+            }} >Explore, Discover, and Shop Your Way to Unparalleled Delight at Our <span style={{fontWeight:'bold'}}>MyBazzar</span></Typography>
         </Box>
       
         <CardMedia
         component='img'
         alt='Product Image'
-        style={{width:'500px',height:'400px'}}
+        sx={{width:{lg:'400px',md:'400px',sm:'410px',xs:'200px'},height:{lg:'500px',md:'410px',sm:'400px',xs:'250px'},position:'absolute',bottom:'0%',right:'0%'}}
         image={Model}
         
     />
@@ -65,16 +70,15 @@ const Headerpart = () => {
     {   
       Product&&Product.map((Item)=>(
               <Link to='/Category' style={{textDecoration:'none'  }} key={Item.pId}>
-               <Card style={{width:'300px' ,height:'300px'}} key={Item.pId}>
+               <Card sx={{width:{lg:'350px',md:'250px',sm:'250px',xs:'200px'} ,height:{lg:"350px",md:'300px',sm:'300px',xs:'240px'}}} key={Item.pId}>
                   <CardMedia
                         component='img'
                         alt='Product Image'
-                        height='240px'
-                        width='100px'
+                       sx={{width:{lg:'350px',md:'250px',sm:'250px',xs:'200px'},height:{lg:'300px',md:'250px',sm:'250px',xs:'200px'}}}
                         image={Item.pImg}
                         
                   />
-                <CardContent>
+                <CardContent >
                   <Typography variant='body1' textAlign={'center'}>{Item.pName}</Typography>
                 </CardContent>
                   
@@ -87,7 +91,7 @@ const Headerpart = () => {
 } 
        
     </Grid>  
-    <Link to='/Category' style={{position:'absolute',top:'20px',right:'140px',textDecoration:'none',color:'black',fontSize:'17px'}}>see more</Link>
+    <Link to='/Category' style={{position:'absolute',top:'20px',right:'14px',textDecoration:'none',color:'black',fontSize:'11px'}}>see more</Link>
     </Box>
     
   </>

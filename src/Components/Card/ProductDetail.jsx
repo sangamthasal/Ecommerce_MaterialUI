@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import CancelIcon from '@mui/icons-material/Cancel';
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
+import { Button,Box ,Card, CardActions, CardContent, CardMedia, Typography } from '@mui/material';
 import LensIcon from '@mui/icons-material/Lens';
 import CurrencyRupeeIcon from '@mui/icons-material/CurrencyRupee';
 import { Link } from 'react-router-dom';
@@ -23,7 +23,8 @@ const ProductDetail = () => {
   
 
   return (
-    <Card  style={{height:400 , width:1000 ,display:'flex' ,gap:4,position:'absolute' , top:'50%' , left:'50%',transform:'translate(-50%,-42%)' }} >
+   <Box sx={{height:'97vh', backgroundColor:'#efebe9'}}>
+    <Card  sx={{height:{lg:400,md:400,sm:700,xs:700} , width:{lg:1000,md:900,sm:400,xs:300},display:'flex',flexDirection:{lg:'row',md:'row',sm:'column',xs:'column'} ,gap:2,position:'absolute' , top:'50%' , left:'50%',transform:'translate(-50%,-42%)' }} >
     <CardMedia
     
         component='img'
@@ -35,7 +36,7 @@ const ProductDetail = () => {
         
     />
 
-    {/*  {console.log('inone')} */}
+  
 
     <CardContent  style={{ display:'flex',flexDirection:'column',gap:15,alignItems:'center',justifyContent:'center',backgroundColor:'grey',padding:'14px 5px'}}>
         <Typography variant='h5' style={{fontWeight:'bold'}}>
@@ -72,6 +73,7 @@ const ProductDetail = () => {
    
 
     </Card>
+    </Box> 
   );
 }
 

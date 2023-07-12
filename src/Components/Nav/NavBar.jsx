@@ -27,35 +27,37 @@ export default function ButtonAppBar() {
  
 
   return (
-   <AppBar position="static" style={{backgroundColor:'black'}}>
+   <AppBar position="static" sx={{backgroundColor:'black'}}>
    
 
-      <Toolbar sx={{  display:'flex',justifyContent:'space-between' }}>
+      <Toolbar sx={{  display:'flex',justifyContent:'space-between'}}>
+      <Link to='/' style={{textDecoration:'none'}} >
         <Typography 
         variant='h6' 
         sx={{
-          display:{
+         
             fontFamily: 'monospace',
-            fontWeight: 700,
+            fontWeight:700,
             letterSpacing: '.3rem',
-            color:'inherit',
-            textDecoration:'none'
-          }
+            color:'white',
+          
         }}
+        
         >
-          <Link to='/' style={{textDecoration:'none' ,color:'inherit'}} >
+         
             MYBAZZAR
-          </Link>
+          
          
         </Typography>
-
-        <Box sx={{ display: {xs: 'none', md: 'flex' } }}>
+        </Link>
+        <Box>
             {pages.map((page) => (
               <Button
                 key={page}
+                size='small'
                 sx={{color:'inherit' }}
               >
-                <Link to={`/${page}`} style={{textDecoration:'none' ,color:'inherit' ,fontSize:14}}>
+                <Link to={`/${page}`} style={{textDecoration:'none' ,color:'inherit',fontSize:14 }}>
                   {page}
                 </Link>
               </Button>
@@ -67,7 +69,7 @@ export default function ButtonAppBar() {
              >
               <Badge badgeContent={totalProduct()}>
                 <Link to='/Cart' style={{textDecoration:'none' ,color:'inherit'}}>
-                <ShoppingCartIcon style={{fontSize:30}}/>
+                <ShoppingCartIcon sx={{fontSize:{lg:30,md:30,sm:20,xs:13}}}/>
                 </Link>
               </Badge>
             </IconButton> 
